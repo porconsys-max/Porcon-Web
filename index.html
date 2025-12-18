@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiservicios Porcon - Soluciones Integrales</title>
+    <title>Multiservicios Porcon | Constructora Peruana</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,17 +176,9 @@
             gap: 12px;
         }
 
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .logo img {
+            height: 45px;
+            width: auto;
         }
 
         .logo-text {
@@ -243,7 +235,7 @@
         /* Hero */
         .hero {
             padding-top: 150px;
-            background: linear-gradient(rgba(44, 90, 160, 0.85), rgba(30, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1503387769-00a112127ca0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(44, 90, 160, 0.85), rgba(30, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -339,6 +331,17 @@
             flex: 1;
         }
 
+        .years-experience {
+            background-color: var(--primary);
+            color: white;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
         .features {
             margin-top: 30px;
             display: grid;
@@ -358,9 +361,63 @@
             margin-top: 5px;
         }
 
-        /* Testimonios */
-        .testimonials {
+        /* Proyectos */
+        .projects {
             background-color: var(--light);
+        }
+        /* Ocultar sección Proyectos (opcional) */
+        #proyectos {
+            display: none !important;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        /* Testimonios */
+        /* Ocultar sección Testimonios (opcional) */
+        .testimonials {
+            display: none !important;
+        }
+
+        .testimonios-slider {
+            /* nota: regla renombrada accidentalmente; mantener original abajo */
         }
 
         .testimonials-slider {
@@ -481,8 +538,10 @@
             margin-bottom: 40px;
         }
 
-        .footer-logo .logo-text {
-            color: white;
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+            margin-bottom: 15px;
         }
 
         .footer-logo p {
@@ -584,6 +643,10 @@
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -625,10 +688,22 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 576px) {
             .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -647,8 +722,7 @@
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <div class="logo-icon">MP</div>
-                <div class="logo-text">Multiservicios <span>Porcon</span></div>
+                <img src="images/logo_principal.png" alt="Logo Multiservicios Porcon">
             </a>
             
             <div class="mobile-toggle" id="mobileToggle">
@@ -659,8 +733,8 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#inicio" class="active">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#testimonios">Testimonios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -670,11 +744,11 @@
     <!-- Sección Hero -->
     <section id="inicio" class="hero">
         <div class="container">
-            <h1>Soluciones Integrales para tu Hogar y Negocio</h1>
-            <p>En <strong>Multiservicios Porcon</strong> ofrecemos servicios profesionales de calidad para todas tus necesidades. Más de 10 años de experiencia nos respaldan.</p>
+            <h1>Constructora y Prestadora de Servicios en Perú</h1>
+            <p>En <strong>Multiservicios Porcon</strong> construimos tus sueños con calidad, seguridad y profesionalismo. Más de 7 años de experiencia nos respaldan en el sector construcción y servicios integrales.</p>
             <div class="hero-btns">
                 <a href="#contacto" class="btn">Solicitar Presupuesto</a>
-                <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
+                <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
             </div>
         </div>
     </section>
@@ -684,24 +758,40 @@
         <div class="container">
             <div class="text-center">
                 <h2>Nuestros Servicios</h2>
-                <p class="section-subtitle">Ofrecemos una amplia gama de servicios para hogares y empresas con la máxima calidad y profesionalismo.</p>
+                <p class="section-subtitle">Ofrecemos servicios integrales de construcción y mantenimiento para proyectos residenciales, comerciales e industriales.</p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Construcción Civil</h3>
+                    <p>Edificaciones residenciales y comerciales, estructuras metálicas, acabados de primera calidad y supervision de obras.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Remodelaciones</h3>
+                    <p>Transformamos espacios existentes con diseños modernos y funcionales, optimizando cada área de tu hogar o negocio.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3>Reparaciones Eléctricas</h3>
-                    <p>Instalación, mantenimiento y reparación de sistemas eléctricos residenciales e industriales.</p>
+                    <h3>Instalaciones Eléctricas</h3>
+                    <p>Sistemas eléctricos seguros y eficientes para viviendas, locales comerciales e industrias, cumpliendo normativas técnicas.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-faucet"></i>
                     </div>
-                    <h3>Fontanería</h3>
-                    <p>Reparación de tuberías, instalación de sanitarios, destapes y mantenimiento de sistemas de agua.</p>
+                    <h3>Instalaciones Sanitarias</h3>
+                    <p>Sistemas de agua fría y caliente, drenajes, instalación de sanitarios y grifería de calidad para garantizar durabilidad.</p>
                 </div>
                 
                 <div class="service-card">
@@ -709,31 +799,63 @@
                         <i class="fas fa-paint-roller"></i>
                     </div>
                     <h3>Pintura y Acabados</h3>
-                    <p>Pintura interior y exterior, enchapes, acabados en drywall y trabajos de decoración.</p>
+                    <p>Aplicación de pinturas de alta calidad, texturizados, enchapes y todo tipo de acabados para interiores y exteriores.</p>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-hammer"></i>
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
-                    <h3>Carpintería y Muebles</h3>
-                    <p>Fabricación e instalación de muebles a medida, reparación de puertas y ventanas.</p>
+                    <h3>Diseño y Planos</h3>
+                    <p>Elaboración de planos arquitectónicos, estructurales y de instalaciones, con asesoría profesional personalizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <div class="text-center">
+                <h2>Proyectos Realizados</h2>
+                <p class="section-subtitle">Algunos de nuestros trabajos más destacados en construcción y servicios en todo Perú.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Casa residencial">
+                    </div>
+                    <div class="project-info">
+                        <h3>Casa Residencial Moderna</h3>
+                        <p><strong>Ubicación:</strong> Lima Norte</p>
+                        <p><strong>Área:</strong> 180 m²</p>
+                        <p>Construcción completa de vivienda de dos pisos con acabados de lujo y diseño personalizado.</p>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-snowflake"></i>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Local comercial">
                     </div>
-                    <h3>Climatización</h3>
-                    <p>Instalación y mantenimiento de aires acondicionados, ventilación y sistemas de calefacción.</p>
+                    <div class="project-info">
+                        <h3>Local Comercial</h3>
+                        <p><strong>Ubicación:</strong> Centro de Lima</p>
+                        <p><strong>Área:</strong> 120 m²</p>
+                        <p>Remodelación completa de local comercial con instalaciones eléctricas y sanitarias nuevas.</p>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-lock"></i>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Edificio multifamiliar">
                     </div>
-                    <h3>Seguridad y Cerrajería</h3>
-                    <p>Instalación de sistemas de seguridad, cámaras, cerraduras de alta seguridad y aperturas de emergencia.</p>
+                    <div class="project-info">
+                        <h3>Edificio Multifamiliar</h3>
+                        <p><strong>Ubicación:</strong> Ate Vitarte</p>
+                        <p><strong>Área:</strong> 850 m²</p>
+                        <p>Construcción de edificio de 4 pisos con 8 departamentos y áreas comunes.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -744,29 +866,30 @@
         <div class="container">
             <div class="about-container">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Equipo de trabajo Multiservicios Porcon">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Equipo de trabajo Multiservicios Porcon">
                 </div>
                 
                 <div class="about-content">
-                    <h2>Sobre Nosotros</h2>
-                    <p><strong>Multiservicios Porcon</strong> es una empresa con más de 10 años de experiencia en el sector de servicios integrales para hogares y empresas. Nos especializamos en ofrecer soluciones completas con calidad, puntualidad y profesionalismo.</p>
+                    <div class="years-experience">7 Años de Experiencia</div>
+                    <h2>Constructora Peruana de Confianza</h2>
+                    <p><strong>Multiservicios Porcon</strong> es una empresa constructora peruana con 7 años de experiencia en el sector de construcción y servicios integrales. Nos especializamos en ofrecer soluciones completas con calidad, puntualidad y profesionalismo.</p>
                     
-                    <p>Nuestro equipo está conformado por técnicos especializados en diversas áreas, lo que nos permite abordar proyectos de diferentes magnitudes con los más altos estándares de calidad.</p>
+                    <p>Nuestro equipo está conformado por ingenieros civiles, arquitectos y técnicos especializados en diversas áreas de la construcción, lo que nos permite abordar proyectos de diferentes magnitudes con los más altos estándares de calidad y seguridad.</p>
                     
                     <div class="features">
                         <div class="feature">
                             <i class="fas fa-check-circle"></i>
                             <div>
                                 <h4>Profesionales Certificados</h4>
-                                <p>Todos nuestros técnicos cuentan con certificaciones y amplia experiencia.</p>
+                                <p>Ingenieros y técnicos con certificaciones y amplia experiencia en construcción.</p>
                             </div>
                         </div>
                         
                         <div class="feature">
                             <i class="fas fa-clock"></i>
                             <div>
-                                <h4>Servicio Rápido</h4>
-                                <p>Atendemos sus solicitudes en el menor tiempo posible, con disponibilidad 24/7 para emergencias.</p>
+                                <h4>Cumplimiento de Plazos</h4>
+                                <p>Entregamos tus proyectos en el tiempo acordado, respetando los cronogramas establecidos.</p>
                             </div>
                         </div>
                         
@@ -774,15 +897,15 @@
                             <i class="fas fa-medal"></i>
                             <div>
                                 <h4>Garantía en Todos los Trabajos</h4>
-                                <p>Todos nuestros servicios cuentan con garantía escrita para su tranquilidad.</p>
+                                <p>Todos nuestros servicios cuentan con garantía escrita para tu tranquilidad.</p>
                             </div>
                         </div>
                         
                         <div class="feature">
                             <i class="fas fa-handshake"></i>
                             <div>
-                                <h4>Precios Justos</h4>
-                                <p>Ofrecemos presupuestos transparentes sin costos ocultos ni sorpresas.</p>
+                                <h4>Precios Competitivos</h4>
+                                <p>Ofrecemos presupuestos transparentes y competitivos sin costos ocultos.</p>
                             </div>
                         </div>
                     </div>
@@ -792,7 +915,7 @@
     </section>
 
     <!-- Sección Testimonios -->
-    <section id="testimonios" class="testimonials">
+    <section class="testimonials">
         <div class="container">
             <div class="text-center">
                 <h2>Testimonios de Clientes</h2>
@@ -812,7 +935,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Contraté a Multiservicios Porcon para una reparación eléctrica en mi local comercial. El trabajo fue impecable, rápido y a un precio justo. Definitivamente los recomiendo."</p>
+                    <p>"Contraté a Multiservicios Porcon para construir mi casa. El trabajo fue impecable, cumplieron con los plazos y el presupuesto. Definitivamente los recomiendo para cualquier proyecto de construcción."</p>
                 </div>
             </div>
         </div>
@@ -823,7 +946,7 @@
         <div class="container">
             <div class="text-center">
                 <h2>Contacto</h2>
-                <p class="section-subtitle">Solicita un presupuesto gratuito o contáctanos para cualquier consulta. Estamos disponibles para atenderte.</p>
+                <p class="section-subtitle">Solicita un presupuesto gratuito o contáctanos para cualquier consulta sobre construcción y servicios. Estamos disponibles para atenderte.</p>
             </div>
             
             <div class="contact-container">
@@ -833,8 +956,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h3>Dirección</h3>
-                            <p>Av. Principal 123, Ciudad</p>
+                            <h3>Oficina Principal</h3>
+                            <p>Av. Los Tulipanes 248, Cajamarca, Perú</p>
                         </div>
                     </div>
                     
@@ -843,8 +966,8 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h3>Teléfono</h3>
-                            <p>(+51) 987 654 321</p>
+                            <h3>Teléfonos</h3>
+                            <p>(+51) 979 592 494</p>
                             <p>(01) 456 7890</p>
                         </div>
                     </div>
@@ -854,9 +977,9 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <h3>Email</h3>
+                            <h3>Correo Electrónico</h3>
                             <p>info@multiserviciosporcon.com</p>
-                            <p>presupuestos@multiserviciosporcon.com</p>
+                            <p>construccion@multiserviciosporcon.com</p>
                         </div>
                     </div>
                     
@@ -866,9 +989,8 @@
                         </div>
                         <div>
                             <h3>Horario de Atención</h3>
-                            <p>Lunes a Viernes: 8:00 AM - 7:00 PM</p>
-                            <p>Sábados: 8:00 AM - 2:00 PM</p>
-                            <p>Emergencias: 24/7</p>
+                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                            <p>Visitas a obra: Con cita previa</p>
                         </div>
                     </div>
                 </div>
@@ -876,40 +998,40 @@
                 <div class="contact-form">
                     <form id="formContacto">
                         <div class="form-group">
-                            <label for="nombre">Nombre completo</label>
+                            <label for="nombre">Nombre completo *</label>
                             <input type="text" id="nombre" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="telefono">Teléfono</label>
+                            <label for="telefono">Teléfono *</label>
                             <input type="tel" id="telefono" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email *</label>
                             <input type="email" id="email" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="servicio">Servicio de interés</label>
+                            <label for="servicio">Tipo de Proyecto *</label>
                             <select id="servicio" class="form-control" required>
                                 <option value="">Seleccione un servicio</option>
-                                <option value="electricidad">Reparaciones Eléctricas</option>
-                                <option value="fontaneria">Fontanería</option>
+                                <option value="construccion">Construcción Civil</option>
+                                <option value="remodelacion">Remodelación</option>
+                                <option value="electricidad">Instalaciones Eléctricas</option>
+                                <option value="sanitaria">Instalaciones Sanitarias</option>
                                 <option value="pintura">Pintura y Acabados</option>
-                                <option value="carpinteria">Carpintería y Muebles</option>
-                                <option value="climatizacion">Climatización</option>
-                                <option value="seguridad">Seguridad y Cerrajería</option>
+                                <option value="diseno">Diseño y Planos</option>
                                 <option value="otro">Otro</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" class="form-control" placeholder="Describe tu requerimiento..." required></textarea>
+                            <label for="mensaje">Descripción del Proyecto *</label>
+                            <textarea id="mensaje" class="form-control" placeholder="Describe tu proyecto, área aproximada, ubicación y cualquier detalle importante..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitud</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Solicitar Presupuesto</button>
                     </form>
                 </div>
             </div>
@@ -921,8 +1043,8 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-logo">
-                    <div class="logo-text">Multiservicios <span>Porcon</span></div>
-                    <p>Soluciones integrales para tu hogar y negocio con calidad, profesionalismo y garantía.</p>
+                    <img src="images/logo_blanco.png" alt="Logo Multiservicios Porcon">
+                    <p>Constructora peruana con 7 años de experiencia en construcción y servicios integrales. Calidad, seguridad y profesionalismo en cada proyecto.</p>
                 </div>
                 
                 <div class="footer-links">
@@ -930,8 +1052,8 @@
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
                         <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#testimonios">Testimonios</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -939,11 +1061,11 @@
                 <div class="footer-services">
                     <h3>Servicios</h3>
                     <ul>
-                        <li><a href="#servicios">Reparaciones Eléctricas</a></li>
-                        <li><a href="#servicios">Fontanería</a></li>
+                        <li><a href="#servicios">Construcción Civil</a></li>
+                        <li><a href="#servicios">Remodelaciones</a></li>
+                        <li><a href="#servicios">Instalaciones Eléctricas</a></li>
+                        <li><a href="#servicios">Instalaciones Sanitarias</a></li>
                         <li><a href="#servicios">Pintura y Acabados</a></li>
-                        <li><a href="#servicios">Carpintería y Muebles</a></li>
-                        <li><a href="#servicios">Climatización</a></li>
                     </ul>
                 </div>
                 
@@ -953,13 +1075,15 @@
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="wa.me/+51979592494" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Multiservicios Porcon. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Multiservicios Porcon - Constructora. Todos los derechos reservados.</p>
+                <p>Cajamarca, Perú</p>
             </div>
         </div>
     </footer>
@@ -1020,7 +1144,7 @@
             
             // Aquí normalmente se enviaría el formulario a un servidor
             // Por ahora solo mostraremos una alerta
-            alert('¡Gracias por su solicitud! Nos pondremos en contacto con usted en breve.');
+            alert('¡Gracias por su solicitud! Nos pondremos en contacto con usted en breve para preparar su presupuesto.');
             this.reset();
         });
         
@@ -1032,7 +1156,17 @@
             }
             
             // Añadir año actual al footer
-            document.querySelector('.copyright p').innerHTML = `&copy; ${new Date().getFullYear()} Multiservicios Porcon. Todos los derechos reservados.`;
+            const year = new Date().getFullYear();
+            document.querySelector('.copyright p').innerHTML = `&copy; ${year} Multiservicios Porcon - Constructora Peruana. Todos los derechos reservados.`;
+            
+            // Manejo del logo - si no se carga, mostrar texto alternativo
+            const logoImg = document.querySelector('.logo img');
+            logoImg.onerror = function() {
+                this.style.display = 'none';
+                const logoText = document.querySelector('.logo-text');
+                logoText.innerHTML = 'Multiservicios <span>Porcon</span>';
+                logoText.style.fontSize = '1.8rem';
+            };
         });
     </script>
 </body>
